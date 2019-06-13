@@ -76,7 +76,7 @@ class MNIST_DataLoader(DataLoader):
 
         Cfg.n_batches = int(np.ceil(self.n_train * 1. / Cfg.batch_size))
 
-        self.data_path = "/content/drive/My Drive/2018/Colab_Deep_Learning/one_class_neural_networks//data/mnist/"
+        self.data_path = "/tf/datas/mnist/"
 
         self.on_memory = True
         Cfg.store_on_gpu = True

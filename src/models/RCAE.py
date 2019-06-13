@@ -23,7 +23,7 @@ import numpy as np
 
 from src.data.main import load_dataset
 
-PROJECT_DIR = "/content/drive/My Drive/2019/testing/oc-nn/"
+PROJECT_DIR = "/tf/reports/"
 
 class RCAE_AD:
     ## Initialise static variables
