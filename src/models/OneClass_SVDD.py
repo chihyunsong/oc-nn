@@ -166,10 +166,10 @@ class OneClass_SVDD:
         if (dataset.lower() == "mnist"):
             from src.data.mnist import MNIST_DataLoader
             # Create the robust cae for the dataset passed
-            self.prj_path = "/content/drive/My Drive/2018/Colab_Deep_Learning/one_class_neural_networks/"
+            self.prj_path = "/tf"
             # self.prj_path = "/Users/raghav/envPython3/experiments/one_class_neural_networks/"
             self.nn_model = MNIST_DataLoader()
-            self.load_dcae_path = self.prj_path + "/models/MNIST/RCAE/MNIST/"
+            self.load_dcae_path = self.prj_path + "/models/MNIST/RCAE/"
             self.lossfuncType = lossfuncType
             self.n_train = len(self.data._X_train)
             self.val = np.ones(Cfg.mnist_rep_dim) * 0.5
@@ -178,7 +178,7 @@ class OneClass_SVDD:
         if (dataset.lower() == "cifar10"):
             from src.data.cifar10 import CIFAR_10_DataLoader
             # Create the robust cae for the dataset passed
-            self.prj_path = "/content/drive/My Drive/2018/Colab_Deep_Learning/one_class_neural_networks/"
+            self.prj_path = "/tf"
             # self.prj_path = "/Users/raghav/envPython3/experiments/one_class_neural_networks/"
             self.nn_model = CIFAR_10_DataLoader()
             self.load_dcae_path = self.prj_path + "/models/CIFAR10/OC_NN/"
@@ -189,7 +189,7 @@ class OneClass_SVDD:
         if (dataset.lower() == "gtsrb"):
             from src.data.GTSRB import GTSRB_DataLoader
             # Create the robust cae for the dataset passed
-            self.prj_path = "/content/drive/My Drive/2018/Colab_Deep_Learning/one_class_neural_networks/"
+            self.prj_path = "/tf"
             # self.prj_path = "/Users/raghav/envPython3/experiments/one_class_neural_networks/"
             self.nn_model = GTSRB_DataLoader()
             self.load_dcae_path = self.prj_path + "/models/GTSRB/OC_NN/"
@@ -200,7 +200,7 @@ class OneClass_SVDD:
         if (dataset.lower() == "lhc"):
             from src.data.cifar10 import LHC_DataLoader
             # Create the robust cae for the dataset passed
-            self.prj_path = "/content/drive/My Drive/2018/Colab_Deep_Learning/one_class_neural_networks/"
+            self.prj_path = "/tf"
             # self.prj_path = "/Users/raghav/envPython3/experiments/one_class_neural_networks/"
             self.nn_model = LHC_DataLoader()
             self.load_dcae_path = self.prj_path + "/models/LHC/OC_NN/"
@@ -1107,14 +1107,13 @@ class OneClass_SVDD:
         x = UpSampling2D((2, 2))(x)
 
         decoded = Conv2D(1, (3, 3), activation='sigmoid', padding='same', use_bias=False)(x)
-
         # this model maps an input to its encoded representation
         encoder = Model(input_img, encoded)
 
         autoencoder = Model(input_img, decoded)
         # Compile the autoencoder with the mean squared error
         autoencoder.compile(loss='mean_squared_error', optimizer='adam')
-        # print("Autoencoder Architecture", autoencoder.summary())
+        print("Autoencoder Architecture", autoencoder.summary())
 
         return [autoencoder, encoder]
 
@@ -2020,7 +2019,7 @@ class OneClass_SVDD:
         elif(OneClass_SVDD.DATASET == "mnist"):
             top_100_anomalies = np.reshape(top_100_anomalies, (-1, 28, 28))
             result = self.tile_raster_images(top_100_anomalies, [28, 28], [10, 10])
-            print("[INFO:] Saving Anomalies Found at ..", self.results)
+            print("[INFO:] Saving Anomalies Found at ..", self.results , str(Cfg.mnist_normal) , "most_anomalous_Top100.png")
             io.imsave(self.results + self.lossfuncType + "__" + str(Cfg.mnist_normal) +"most_anomalous_Top100.png", result)
            
         return 

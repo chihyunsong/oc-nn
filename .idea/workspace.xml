@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9743668c-a7eb-40dc-8a04-61971703985b" name="Default Changelist" comment="" />
+    <list default="true" id="9743668c-a7eb-40dc-8a04-61971703985b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/oc-nn.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/OC-NN/MNIST/OCNN_Experiments.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/OC-NN/MNIST/OCNN_Experiments.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_DEEP_SVDD__0most_anomalous_Top100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_DEEP_SVDD__0most_normal_Top100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_anomalous_Top100.png" beforeDir="false" afterPath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_anomalous_Top100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_normal_Top100.png" beforeDir="false" afterPath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_normal_Top100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_anomalous_Top100.png" beforeDir="false" afterPath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_anomalous_Top100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_normal_Top100.png" beforeDir="false" afterPath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_normal_Top100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/OneClass_SVDD.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/OneClass_SVDD.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,10 +27,44 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/config.py">
+        <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/MNIST/OCNN_Experiments.ipynb">
+          <provider selected="true" editor-type-id="jupyter-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/OneClass_SVDD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+            <state relative-caret-position="323">
+              <caret line="1998" column="70" selection-start-line="1998" selection-start-column="70" selection-end-line="1998" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_anomalous_Top100.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_normal_Top100.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__4most_anomalous_Top100.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__4most_normal_Top100.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -23,60 +73,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/DCAE.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/models/MNIST/RCAE/1.0__DCAE_DIGIT__0__model.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="9681" selection-start-column="9681" selection-end-column="9681" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_anomalous_Top100.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_normal_Top100.png">
+        <entry file="file://$PROJECT_DIR$/results/mnist_ocnn.png">
           <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/RCAE_models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/tf_OneClass_NN_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/tf_OneClass_CNN_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/RCAE_Verion1.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/RCAE_Cifar10.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -85,6 +97,22 @@
     <findStrings>
       <find>report</find>
       <find>OneClass_SVDD</find>
+      <find>rcae</find>
+      <find>rcae/</find>
+      <find>def fit</find>
+      <find>CAE</find>
+      <find>saving</find>
+      <find>saving ano</find>
+      <find>con</find>
+      <find>/tf</find>
+      <find>cae.json</find>
+      <find>digit</find>
+      <find>mnist</find>
+      <find>cfg.mnist</find>
+      <find>Cfg</find>
+      <find>cfg</find>
+      <find>cfg.mnist_normal</find>
+      <find>mnist_normal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -97,14 +125,8 @@
         <option value="$PROJECT_DIR$/src/data/mnist.py" />
         <option value="$PROJECT_DIR$/src/models/RCAE.py" />
         <option value="$PROJECT_DIR$/models/RCAE_models.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/deployment.xml" />
-        <option value="$PROJECT_DIR$/.idea/other.xml" />
+        <option value="$PROJECT_DIR$/src/models/OneClass_SVDD.py" />
+        <option value="$PROJECT_DIR$/src/config.py" />
       </list>
     </option>
   </component>
@@ -119,7 +141,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,17 +148,45 @@
               <item name="oc-nn" type="b2602c69:ProjectViewProjectNode" />
               <item name="oc-nn" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="oc-nn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oc-nn" type="462c0819:PsiDirectoryNode" />
+              <item name="reports" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oc-nn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oc-nn" type="462c0819:PsiDirectoryNode" />
+              <item name="reports" type="462c0819:PsiDirectoryNode" />
+              <item name="figures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oc-nn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oc-nn" type="462c0819:PsiDirectoryNode" />
+              <item name="reports" type="462c0819:PsiDirectoryNode" />
+              <item name="figures" type="462c0819:PsiDirectoryNode" />
+              <item name="MNIST" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oc-nn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oc-nn" type="462c0819:PsiDirectoryNode" />
+              <item name="reports" type="462c0819:PsiDirectoryNode" />
+              <item name="figures" type="462c0819:PsiDirectoryNode" />
+              <item name="MNIST" type="462c0819:PsiDirectoryNode" />
+              <item name="OC_NN" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -194,18 +243,29 @@
       <workItem from="1560402753789" duration="3365000" />
       <workItem from="1560412703304" duration="29000" />
       <workItem from="1560413274875" duration="184000" />
-      <workItem from="1560414692451" duration="692000" />
+      <workItem from="1560414692451" duration="4559000" />
+      <workItem from="1560476195649" duration="6881000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5268000" />
+    <option name="totallyTimeSpent" value="16016000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="956" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="951" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26495728" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.26800978" />
+      <window_info id="Structure" order="1" sideWeight="0.5018248" side_tool="true" weight="0.26800978" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -213,13 +273,13 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3263889" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.33062646" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32945284" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32945284" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4993895" weight="0.32596043" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.3827839" side_tool="true" weight="0.3620489" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.330617" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="File Transfer" order="12" visible="true" weight="0.3599537" />
+      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.6172161" visible="true" weight="0.3620489" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -228,9 +288,71 @@
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="right" x="0" y="0" width="370" height="756" id="Documentation" order="5" side_tool="true" weight="0.32967034" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.26800978" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.5018248" side_tool="true" visible="true" weight="0.26800978" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32945284" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32945284" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4993895" weight="0.32596043" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.3827839" side_tool="true" visible="true" weight="0.3620489" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.330617" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.6172161" visible="true" weight="0.3620489" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" x="0" y="0" width="370" height="756" id="Documentation" order="5" side_tool="true" weight="0.32967034" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>file://$PROJECT_DIR$/notebooks/OC-NN/MNIST/OCNN_Experiments.ipynb</url>
+          <line>112</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/models/mnist_ae2.py">
@@ -276,16 +398,6 @@
         <state relative-caret-position="-1240" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/OneClass_NN_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="198" lean-forward="true" selection-start-line="198" selection-end-line="198" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -295,15 +407,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1345">
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -385,20 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/RCAE.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/OneClass_SVDD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="128" column="21" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -409,9 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/MNIST/OneClass_Deep_SVDD_Experiments.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/RCAE_models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -421,6 +507,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/RDA_models.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/RCAE_Verion1.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/RCAE_Cifar10.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/DCAE.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practice/d.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4995">
+          <caret line="337" column="4" selection-start-line="337" selection-start-column="4" selection-end-line="337" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notebooks/RCAE/MNIST/RCAE_MNIST_Experiments--Success.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notebooks/RCAE/RCAE_GTSRB Stop Signs With Adversarial Attacks.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/RCAE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/OneClass_NN_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/tf_OneClass_NN_model.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -433,7 +561,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/tf_OneClass_CNN_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="465">
           <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -441,25 +569,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/RCAE_Verion1.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_DEEP_SVDD__0most_anomalous_Top100.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/RCAE_Cifar10.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_DEEP_SVDD__0most_normal_Top100.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/MNIST/OCNN_Experiments.ipynb">
+    <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/RCAE/most_normalClass_0_Top100.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/MNIST/OneClass_Deep_SVDD_Experiments.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/DCAE.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_normal_Top100.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/practice/d.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/models/MNIST/RCAE/1.0__DCAE_DIGIT__0__model.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9681" selection-start-column="9681" selection-end-column="9681" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/mnist_ocnn.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/MNIST/OCNN_Experiments.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/OneClass_SVDD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="1998" column="70" selection-start-line="1998" selection-start-column="70" selection-end-line="1998" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_anomalous_Top100.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_normal_Top100.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_anomalous_Top100.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__4most_normal_Top100.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__4most_anomalous_Top100.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
