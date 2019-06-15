@@ -73,25 +73,9 @@ class Adjust_svdd_Radius(Callback):
 
     def on_epoch_end(self, batch, logs={}):
 
-        if (self.model_type == "OC_SVDD"):
-            reps = self.model.predict(self.inputs[:len(self.inputs), :])
-            reps = np.reshape(reps, (len(reps), self.rep_dim))
-            self.reps = reps
-            self.y_reps = self.reps
-            center = self.cvar
-            dist = np.sum((reps - self.cvar) ** 2, axis=1)
-            scores = dist
-            val = np.sort(scores)
-            R_new = np.percentile(val, Cfg.nu * 100)  # qth quantile of the radius.
-            R_updated = R_new
-            # print("[INFO:] Center (c)  Used.", center)
-            # print("[INFO:] Updated Radius (R) .", R_updated)
-            self.radius = R_new
-            # print("[INFO:] \n Updated Radius Value...", R_new)
-            # print("[INFO:] \n Updated Rreps value..", self.y_reps)
-            return self.radius
 
-        elif (self.model_type == "OC_NN"):
+
+        if (self.model_type == "OC_NN"):
             reps = self.model.predict(self.inputs[:len(self.inputs), :])
             # reps = np.reshape(reps, (len(reps), 32))
             # print("[INFO:] The OCNN - reps shape is ", reps.shape)
@@ -174,39 +158,6 @@ class OneClass_SVDD:
             self.n_train = len(self.data._X_train)
             self.val = np.ones(Cfg.mnist_rep_dim) * 0.5
         # Depending on the dataset build respective autoencoder architecture
-        
-        if (dataset.lower() == "cifar10"):
-            from src.data.cifar10 import CIFAR_10_DataLoader
-            # Create the robust cae for the dataset passed
-            self.prj_path = "/tf"
-            # self.prj_path = "/Users/raghav/envPython3/experiments/one_class_neural_networks/"
-            self.nn_model = CIFAR_10_DataLoader()
-            self.load_dcae_path = self.prj_path + "/models/CIFAR10/OC_NN/"
-            self.lossfuncType = lossfuncType
-            self.n_train = len(self.data._X_train)
-            # self.val = np.ones(Cfg.mnist_rep_dim) * 0.5
-            
-        if (dataset.lower() == "gtsrb"):
-            from src.data.GTSRB import GTSRB_DataLoader
-            # Create the robust cae for the dataset passed
-            self.prj_path = "/tf"
-            # self.prj_path = "/Users/raghav/envPython3/experiments/one_class_neural_networks/"
-            self.nn_model = GTSRB_DataLoader()
-            self.load_dcae_path = self.prj_path + "/models/GTSRB/OC_NN/"
-            self.lossfuncType = lossfuncType
-            self.n_train = len(self.data._X_train)
-            # self.val = np.ones(Cfg.mnist_rep_dim) * 0.5
-        
-        if (dataset.lower() == "lhc"):
-            from src.data.cifar10 import LHC_DataLoader
-            # Create the robust cae for the dataset passed
-            self.prj_path = "/tf"
-            # self.prj_path = "/Users/raghav/envPython3/experiments/one_class_neural_networks/"
-            self.nn_model = LHC_DataLoader()
-            self.load_dcae_path = self.prj_path + "/models/LHC/OC_NN/"
-            self.lossfuncType = lossfuncType
-            self.n_train = len(self.data._X_train)
-            # self.val = np.ones(Cfg.mnist_rep_dim) * 0.5
 
     def load_data(self, data_loader=None, pretrain=False):
         self.data = data_loader()
@@ -1637,7 +1588,7 @@ class OneClass_SVDD:
             self.cvar = c  # Initialize the center
 
 
-            # print("[INFO:] Model SVDD Summary", self.model_svdd.summary())
+            print("[INFO:] Model SVDD Summary", self.model_svdd.summary())
             modeltype = "OC_NN"
             out_batch = Adjust_svdd_Radius(self.model_svdd, self.cvar, self.Rvar, X_train_to_Adjust_R, modeltype,self.h_size)
             callbacks = [out_batch, scheduler]
@@ -1663,7 +1614,7 @@ class OneClass_SVDD:
             self.Rvar = out_batch.radius
             self.cvar = out_batch.cvar
             print("[INFO:] \n Model compiled  Outside CB: Updated Radius Value...", self.Rvar)
-            # print("[INFO:] Model compiled and fit with custom ocnn_hypershere_loss")
+            print("[INFO:] Model compiled and fit with custom ocnn_hypershere_loss")
 
         return
 

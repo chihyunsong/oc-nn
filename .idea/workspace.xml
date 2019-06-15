@@ -2,20 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9743668c-a7eb-40dc-8a04-61971703985b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/oc-nn.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/OC-NN/MNIST/OCNN_Experiments.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/OC-NN/MNIST/OCNN_Experiments.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_DEEP_SVDD__0most_anomalous_Top100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_DEEP_SVDD__0most_normal_Top100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_anomalous_Top100.png" beforeDir="false" afterPath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_anomalous_Top100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_normal_Top100.png" beforeDir="false" afterPath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_normal_Top100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_anomalous_Top100.png" beforeDir="false" afterPath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_anomalous_Top100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_normal_Top100.png" beforeDir="false" afterPath="$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_normal_Top100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/OneClass_SVDD.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/OneClass_SVDD.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,40 +17,25 @@
           <provider selected="true" editor-type-id="jupyter-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/OneClass_SVDD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="1998" column="70" selection-start-line="1998" selection-start-column="70" selection-end-line="1998" selection-end-column="70" />
+            <state relative-caret-position="230">
+              <caret line="570" column="12" lean-forward="true" selection-start-line="570" selection-start-column="12" selection-end-line="570" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_anomalous_Top100.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/MNIST/OneClass_Deep_SVDD_Experiments.ipynb">
+          <provider selected="true" editor-type-id="jupyter-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_normal_Top100.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__4most_anomalous_Top100.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__4most_normal_Top100.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config.py">
+        <entry file="file://$PROJECT_DIR$/models/tf_OneClass_NN_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+            <state relative-caret-position="1301">
+              <caret line="104" column="8" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -73,22 +44,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/MNIST/RCAE/1.0__DCAE_DIGIT__0__model.json">
+        <entry file="file://$PROJECT_DIR$/models/tf_OneClass_CNN_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="9681" selection-start-column="9681" selection-end-column="9681" />
+            <state relative-caret-position="-206">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_anomalous_Top100.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/models/tf_Cifar_OC_NN_Models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-103">
+              <caret line="484" column="19" lean-forward="true" selection-start-line="484" selection-start-column="19" selection-end-line="484" selection-end-column="19" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results/mnist_ocnn.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/notebooks/OCSVM_SVDD/OCSVM_SVDD_CIFAR10.ipynb">
+          <provider selected="true" editor-type-id="jupyter-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notebooks/OCSVM_SVDD/OCSVM_SVDD_MNIST.ipynb">
+          <provider selected="true" editor-type-id="jupyter-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/CIFAR/OCNN_Experiments_new.ipynb">
+          <provider selected="true" editor-type-id="jupyter-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/mnist_models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1041" />
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -110,9 +105,21 @@
       <find>mnist</find>
       <find>cfg.mnist</find>
       <find>Cfg</find>
-      <find>cfg</find>
       <find>cfg.mnist_normal</find>
       <find>mnist_normal</find>
+      <find>cfg</find>
+      <find>lossfun</find>
+      <find>predict</find>
+      <find>custom</find>
+      <find>nu</find>
+      <find>custom_oc</find>
+      <find>hyperplane Loss</find>
+      <find>oneclass_svdd</find>
+      <find>rvalue</find>
+      <find>r</find>
+      <find>ONE_CLASS_NEURAL_NETWORK</find>
+      <find>loss</find>
+      <find>Adjust_svdd_Radius</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,16 +132,16 @@
         <option value="$PROJECT_DIR$/src/data/mnist.py" />
         <option value="$PROJECT_DIR$/src/models/RCAE.py" />
         <option value="$PROJECT_DIR$/models/RCAE_models.py" />
-        <option value="$PROJECT_DIR$/src/models/OneClass_SVDD.py" />
         <option value="$PROJECT_DIR$/src/config.py" />
+        <option value="$PROJECT_DIR$/models/tf_OneClass_NN_model.py" />
+        <option value="$PROJECT_DIR$/src/models/OneClass_SVDD.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3" />
-    <option name="y" value="88" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="956" />
+    <option name="height" value="951" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -151,28 +158,17 @@
             <path>
               <item name="oc-nn" type="b2602c69:ProjectViewProjectNode" />
               <item name="oc-nn" type="462c0819:PsiDirectoryNode" />
-              <item name="reports" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oc-nn" type="b2602c69:ProjectViewProjectNode" />
               <item name="oc-nn" type="462c0819:PsiDirectoryNode" />
-              <item name="reports" type="462c0819:PsiDirectoryNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
+              <item name="notebooks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oc-nn" type="b2602c69:ProjectViewProjectNode" />
               <item name="oc-nn" type="462c0819:PsiDirectoryNode" />
-              <item name="reports" type="462c0819:PsiDirectoryNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="MNIST" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oc-nn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc-nn" type="462c0819:PsiDirectoryNode" />
-              <item name="reports" type="462c0819:PsiDirectoryNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="MNIST" type="462c0819:PsiDirectoryNode" />
-              <item name="OC_NN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -244,12 +240,12 @@
       <workItem from="1560412703304" duration="29000" />
       <workItem from="1560413274875" duration="184000" />
       <workItem from="1560414692451" duration="4559000" />
-      <workItem from="1560476195649" duration="6881000" />
+      <workItem from="1560476195649" duration="9161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16016000" />
+    <option name="totallyTimeSpent" value="18296000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -261,10 +257,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="951" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="951" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.26800978" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.26800978" />
       <window_info id="Structure" order="1" sideWeight="0.5018248" side_tool="true" weight="0.26800978" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -279,7 +275,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.3827839" side_tool="true" weight="0.3620489" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.330617" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.6172161" visible="true" weight="0.3620489" />
+      <window_info active="true" anchor="bottom" id="File Transfer" order="12" sideWeight="0.6172161" visible="true" weight="0.3620489" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -289,8 +285,8 @@
       <window_info anchor="right" x="0" y="0" width="370" height="756" id="Documentation" order="5" side_tool="true" weight="0.32967034" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.26800978" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.5018248" side_tool="true" visible="true" weight="0.26800978" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.26800978" />
+      <window_info id="Structure" order="1" sideWeight="0.5018248" side_tool="true" weight="0.26800978" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -301,7 +297,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32945284" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32945284" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4993895" weight="0.32596043" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.3827839" side_tool="true" visible="true" weight="0.3620489" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.3827839" side_tool="true" weight="0.3620489" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.330617" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.6172161" visible="true" weight="0.3620489" />
@@ -355,27 +351,11 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/mnist_ae2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/CIFAR/OneClass_Deep_SVDD_Experiments.ipynb">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/CIFAR/Soft_Boundary_Deep_SVDD_Experiments.ipynb">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/models/spam_models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/tf_Cifar_OC_NN_Models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -385,10 +365,6 @@
           <second_editor />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/CIFAR/OCNN_Experiments_new.ipynb">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/models/cnn.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
@@ -550,25 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/tf_OneClass_NN_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/tf_OneClass_CNN_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_DEEP_SVDD__0most_anomalous_Top100.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -577,9 +534,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/RCAE/most_normalClass_0_Top100.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/MNIST/OneClass_Deep_SVDD_Experiments.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_normal_Top100.png">
       <provider selected="true" editor-type-id="images" />
@@ -594,40 +548,85 @@
     <entry file="file://$PROJECT_DIR$/results/mnist_ocnn.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/MNIST/OCNN_Experiments.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/OneClass_SVDD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="1998" column="70" selection-start-line="1998" selection-start-column="70" selection-end-line="1998" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/SOFT_BOUND_DEEP_SVDD__0most_anomalous_Top100.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_normal_Top100.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_anomalous_Top100.png">
+    <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__4most_normal_Top100.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__4most_normal_Top100.png">
+    <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__0most_anomalous_Top100.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/reports/figures/MNIST/OC_NN/ONE_CLASS_NEURAL_NETWORK__4most_anomalous_Top100.png">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="103" column="10" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/MNIST/OCNN_Experiments.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notebooks/OCSVM_SVDD/OCSVM_SVDD_CIFAR10.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mnist_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1041" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/tf_OneClass_NN_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1301">
+          <caret line="104" column="8" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/tf_OneClass_CNN_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-206">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notebooks/OCSVM_SVDD/OCSVM_SVDD_MNIST.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/CIFAR/OCNN_Experiments_new.ipynb">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/tf_Cifar_OC_NN_Models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-103">
+          <caret line="484" column="19" lean-forward="true" selection-start-line="484" selection-start-column="19" selection-end-line="484" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notebooks/OC-NN/MNIST/OneClass_Deep_SVDD_Experiments.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/OneClass_SVDD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="570" column="12" lean-forward="true" selection-start-line="570" selection-start-column="12" selection-end-line="570" selection-end-column="12" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
