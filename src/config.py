@@ -80,7 +80,7 @@ class Configuration(object):
     mnist_bias = True
     mnist_rep_dim = 32
     mnist_architecture = 1  # choose one of the implemented architectures
-    mnist_normal = 4 ##  9,8,7,6,5,4,3,2,1 0
+    mnist_normal = 0 ##  9,8,7,6,5,4,3,2,1 0
     mnist_outlier = -1
 
     # CIFAR-10 dataset parameters

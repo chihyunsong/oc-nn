@@ -105,7 +105,7 @@ class OneClass_SVDD:
 
     def __init__(self, dataset, lossfuncType, inputdim, hiddenLayerSize, img_hgt, img_wdt, img_channel, modelSavePath,
                  reportSavePath,
-                 preTrainedWtPath, seed, intValue=0, stringParam="defaultValue",
+                 preTrainedWtPath, seed, mnist_normal, intValue=0, stringParam="defaultValue",
                  otherParam=None):
         """
         Called when initializing the classifier
@@ -115,6 +115,7 @@ class OneClass_SVDD:
         OneClass_SVDD.HIDDEN_SIZE = hiddenLayerSize
         OneClass_SVDD.RESULT_PATH = reportSavePath
         Cfg.seed = seed
+        Cfg.mnist_normal = mnist_normal
         print("OneClass_SVDD.RESULT_PATH:",OneClass_SVDD.RESULT_PATH)
         self.intValue = intValue
         self.stringParam = stringParam
@@ -142,6 +143,7 @@ class OneClass_SVDD:
         self.Rvar = 0.0  # Radius
         self.cvar = 0.0  # center which represents the mean of the representations
         self.l2_penalty_wts = None
+        self.oc_nn_model = None
 
         # load dataset
         load_dataset(self, dataset.lower(), self.pretrain)
@@ -549,87 +551,6 @@ class OneClass_SVDD:
             
             return X_train
 
-            
-        elif(OneClass_SVDD.DATASET == "cifar10"):
-            X_train = self.data._X_train
-            y_train = self.data._y_train
-            
-            X_test = X_train
-            y_test = y_train
-            
-            
-            return X_train
-            
-        
-        elif(OneClass_SVDD.DATASET == "gtsrb"):
-                
-                # X_train = np.concatenate((self.data._X_train, self.data._X_test))
-                # y_train = np.concatenate((self.data._y_train, self.data._y_test))
-                
-                # X_train = self.data._X_train
-                # y_train = self.data._y_train
-            
-                X_train = self.data._X_train
-                y_train = self.data._y_train
-        
-                # X_test = self.data._X_test
-                # y_test = self.data._y_test
-                
-                # # Make sure the axis dimensions are aligned for training convolutional autoencoders
-               
-                
-                # print("X_train,X_test====>",X_train.shape, X_test.shape)
-              
-                # X_train = X_train/255.0
-                # X_test = X_test / 255.0
-
-        
-                # ## Combine the positive data
-                # trainXPos = X_train[np.where(y_train == 0)]
-                # trainYPos = np.zeros(len(trainXPos))
-                # testXPos = X_test[np.where(y_test == 0)]
-                # testYPos = np.zeros(len(testXPos))
-        
-        
-                # # Combine the negative data
-                # trainXNeg = X_train[np.where(y_train == 1)]
-                # trainYNeg = np.ones(len(trainXNeg))
-                # testXNeg = X_test[np.where(y_test == 1)]
-                # testYNeg = np.ones(len(testXNeg))
-
-                # print("trainXPos,testXPos",trainXPos.shape, testXPos.shape)
-                # X_trainPOS = np.concatenate((trainXPos, testXPos))
-                # y_trainPOS = np.concatenate((trainYPos, testYPos))
-        
-                # X_trainNEG = np.concatenate((trainXNeg, testXNeg))
-                # y_trainNEG = np.concatenate((trainYNeg, testYNeg))
-        
-                # # Just 0.01 points are the number of anomalies.
-                # num_of_anomalies = int(0.1 * len(X_trainPOS))
-        
-                # X_trainNEG = X_trainNEG[0:num_of_anomalies]
-                # y_trainNEG = y_trainNEG[0:num_of_anomalies]
-        
-        
-                # X_train = np.concatenate((X_trainPOS, X_trainNEG))
-                # y_train = np.concatenate((y_trainPOS, y_trainNEG))
-        
-                
-                # self.data._X_test = X_train
-                # self.data._y_test = y_train
-                
-                print(" [INFO:]  The shape  of  training data ----",X_train.shape)
-                return X_train
-
-        elif(OneClass_SVDD.DATASET == "lhc"):
-            X_train = self.data._X_train
-            y_train = self.data._y_train
-            
-            X_test = X_train
-            y_test = y_train
-            
-            return X_train
-        
         
         if (self.lossfuncType == "ONE_CLASS_NEURAL_NETWORK"):
             X_train = X_train[np.where(y_train == 0)]
@@ -686,93 +607,6 @@ class OneClass_SVDD:
             
             return [X_test, y_test, PosBoundary, NegBoundary,X_test]
             
-        elif(OneClass_SVDD.DATASET == "cifar10"):
-            X_train = self.data._X_train
-            y_train = self.data._y_train
-            
-            X_test = X_train
-            y_test = y_train
-            
-            
-            X_test_beforegcn = self.data._X_test_beforegcn
-            
-            testXNeg = X_test[np.where(y_test == 1)]
-            testXPos = X_test[np.where(y_test == 0)]
-            
-            PosBoundary = len(testXPos)
-            NegBoundary = len(testXNeg)
-            print("[INFO: ] Shape of One Class Input Data used in testing", X_test.shape)
-            print("[INFO: ] Shape of (Positive) One Class Input Data used in testing", testXPos.shape)
-            print("[INFO: ] Shape of (Negative) One Class Input Data used in testing", testXNeg.shape)
-            
-            return [X_test, y_test, PosBoundary, NegBoundary,X_test_beforegcn]
-            
-        
-        elif(OneClass_SVDD.DATASET == "gtsrb"):
-                
-                # X_train = np.concatenate((self.data._X_train, self.data._X_test))
-                # y_train = np.concatenate((self.data._y_train, self.data._y_test))
-                
-                # # X_train = self.data._X_train
-                # # y_train = self.data._y_train
-            
-                # X_test = X_train
-                # y_test = y_train
-                # # X_test = self.data._X_test
-                # # y_test = self.data._y_test
-    
-                
-                # X_train = np.concatenate((trainXPos, trainXNeg))
-                # y_train = np.concatenate((trainYPos, trainYNeg))
-                
-                # X_test = X_train
-                
-                
-                # # Make sure the axis dimensions are aligned for training convolutional autoencoders
-                # # X_train = np.moveaxis(X_train, 1, 3)
-                # # X_test = np.moveaxis(X_test, 1, 3)
-              
-                # X_train = X_train/255.0
-                # X_test = X_test / 255.0
-                
-                
-                
-                # print("INFO: The self.data._X_val ",self.data._X_val.shape)
-                # X_test = self.data._X_val
-                # y_test = y_train
-                
-                X_test =  self.data._X_test 
-                y_test = self.data._y_test 
-                
-                testXPos = X_test[np.where(y_test == 0)]
-                testYPos = np.zeros(len(testXPos))
-                testXNeg = X_test[np.where(y_test == 1)]
-                testYNeg = 1 * np.ones(len(testXNeg))
-    
-                PosBoundary = len(testXPos)
-                NegBoundary = len(testXNeg)
-                
-    
-                print("[INFO:]  Length of Positive data", len(testXPos))
-                print("[INFO:]  Length of Negative data", len(testXNeg))
-    
-                
-                return [X_test, y_test, PosBoundary, NegBoundary,X_test]
-
-        elif(OneClass_SVDD.DATASET == "lhc"):
-            X_train = self.data._X_train
-            y_train = self.data._y_train
-            
-            X_test = X_train
-            y_test = y_train
-            
-            PosBoundary = len(testXPos)
-            NegBoundary = len(testXNeg)
-            print("[INFO: ] Shape of One Class Input Data used in testing", X_test.shape)
-            print("[INFO: ] Shape of (Positive) One Class Input Data used in testing", testXPos.shape)
-            print("[INFO: ] Shape of (Negative) One Class Input Data used in testing", testXNeg.shape)
-            
-            return [X_test, y_test, PosBoundary, NegBoundary]
 
         return 
 
@@ -838,20 +672,20 @@ class OneClass_SVDD:
 
         r = rvalue
         center = self.cvar
-        # w = self.oc_nn_model.layers[-2].get_weights()[0]
-        # V = self.oc_nn_model.layers[-1].get_weights()[0]
-        # print("Shape of w",w.shape)
-        # print("Shape of V",V.shape)
+        w = self.oc_nn_model.layers[-2].get_weights()[0]
+        V = self.oc_nn_model.layers[-1].get_weights()[0]
+        print("Shape of w",w.shape)
+        print("Shape of V",V.shape)
         nu = Cfg.nu
 
         def custom_hinge(y_true, y_pred):
-            # term1 = 0.5 * tf.reduce_sum(w ** 2)
-            # term2 = 0.5 * tf.reduce_sum(V ** 2)
+            #term1 = 0.5 * tf.reduce_sum(w ** 2)
+           # term2 = 0.5 * tf.reduce_sum(V ** 2)
+
 
             term3 =   K.square(r) + K.sum( K.maximum(0.0,    K.square(y_pred -center) - K.square(r)  ) , axis=1 )
-            # term3 = K.square(r) + K.sum(K.maximum(0.0, K.square(r) - K.square(y_pred - center)), axis=1)
+            #term3 = K.square(r) + K.sum(K.maximum(0.0, K.square(r) - K.square(y_pred - center)), axis=1)
             term3 = 1 / nu * K.mean(term3)
-
             loss = term3
 
             return (loss)
@@ -875,6 +709,7 @@ class OneClass_SVDD:
         svdd_network.add(Activation("relu"))
         svdd_network.add(BatchNormalization(axis=chanDim))
         svdd_network.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
+
 
         svdd_network.add(Conv2D(8, (3, 3), padding="same", input_shape=inputShape))
         svdd_network.add(Activation("relu"))
@@ -948,13 +783,13 @@ class OneClass_SVDD:
 
 
         ## Add one class neural network
-        # ocnn_model.add(Flatten())
-        # ocnn_model.add(Dense(32,activation='linear'))
-        # ocnn_model.add(Dense(16,activation='linear'))
-        # ocnn_model.add(Dense(1,activation='linear'))
-        # print("Set Linear activation.....")
+        ocnn_model.add(Flatten())
+        ocnn_model.add(Dense(32,activation='linear'))
+        ocnn_model.add(Dense(16,activation='linear'))
+        ocnn_model.add(Dense(1,activation='linear'))
+        print("Set Linear activation.....")
 
-        # ocnn_model.summary(line_length=100)
+        ocnn_model.summary(line_length=100)
 
         return ocnn_model
 
@@ -1068,145 +903,7 @@ class OneClass_SVDD:
 
         return [autoencoder, encoder]
 
-    def compile_autoencoder_cifar(self):
 
-        def my_init(shape, dtype=None):
-            W1_init = learn_dictionary(self.data._X_train, 64, 3, n_sample=500)
-            # print("self.data._X_train",self.data._X_train.shape)
-            # print("W1_init.shape",W1_init.shape)
-            W1_init = np.reshape(W1_init, (3, 3, 3, 64))
-            # print("Reshaped W1_init.shape", W1_init.shape)
-            return W1_init
-            # return W1_init
-
-        chanDim = -1  # since depth is appearing the end
-
-        input_img = Input(shape=(32, 32, 3))  # adapt this if using `channels_first` image data format
-       
-        x = Conv2D(128, (3, 3),  use_bias=False, padding='same')(input_img)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = MaxPooling2D((2, 2), padding='same')(x)
-        
-        x = Conv2D(64, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = MaxPooling2D((2, 2), padding='same')(x)
-        
-        x = Conv2D(32, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = MaxPooling2D((2, 2), padding='same')(x)
-        
-        x = Conv2D(32, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        encoded = MaxPooling2D((2, 2), padding='same')(x)
-        
-        x = Conv2D(32, (3, 3), padding='same',use_bias=False)(encoded)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = UpSampling2D((2, 2))(x)
-        
-        x = Conv2D(32, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = UpSampling2D((2, 2))(x)
-        
-        x = Conv2D(64, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = UpSampling2D((2, 2))(x)
-        
-        x = Conv2D(128, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = UpSampling2D((2, 2))(x)
-        
-        x = Conv2D(3, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        decoded = Activation('sigmoid') (x)
-        
-        # this model maps an input to its encoded representation
-        encoder = Model(input_img, encoded)
-
-        autoencoder = Model(input_img, decoded)
-        # Compile the autoencoder with the mean squared error
-        autoencoder.compile(loss='binary_crossentropy', optimizer='adam')
-        # print("[INFO] : Autoencoder Architecture", autoencoder.summary())
-
-        return [autoencoder, encoder]
-
-    def compile_autoencoder_gtsrb(self):
-
-       
-        def my_init(shape, dtype=None):
-            W1_init = learn_dictionary(self.data._X_train, 64, 3, n_sample=500)
-            # print("self.data._X_train",self.data._X_train.shape)
-            # print("W1_init.shape",W1_init.shape)
-            W1_init = np.reshape(W1_init, (3, 3, 3, 64))
-            # print("Reshaped W1_init.shape", W1_init.shape)
-            return W1_init
-            # return W1_init
-
-        chanDim = -1  # since depth is appearing the end
-
-        input_img = Input(shape=(32, 32, 3))  # adapt this if using `channels_first` image data format
-       
-        x = Conv2D(128, (3, 3),  use_bias=False, padding='same')(input_img)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = MaxPooling2D((2, 2), padding='same')(x)
-        
-        x = Conv2D(64, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = MaxPooling2D((2, 2), padding='same')(x)
-        
-        x = Conv2D(32, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = MaxPooling2D((2, 2), padding='same')(x)
-        
-        x = Conv2D(32, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        encoded = MaxPooling2D((2, 2), padding='same')(x)
-        
-        x = Conv2D(32, (3, 3), padding='same',use_bias=False)(encoded)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = UpSampling2D((2, 2))(x)
-        
-        x = Conv2D(32, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = UpSampling2D((2, 2))(x)
-        
-        x = Conv2D(64, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = UpSampling2D((2, 2))(x)
-        
-        x = Conv2D(128, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        x = LeakyReLU(0.1)(x)
-        x = UpSampling2D((2, 2))(x)
-        
-        x = Conv2D(3, (3, 3), padding='same',use_bias=False)(x)
-        x = BatchNormalization()(x)
-        decoded = Activation('sigmoid') (x)
-        
-        # this model maps an input to its encoded representation
-        encoder = Model(input_img, encoded)
-
-        autoencoder = Model(input_img, decoded)
-        # Compile the autoencoder with the mean squared error
-        autoencoder.compile(loss='binary_crossentropy', optimizer='adam')
-        # print("[INFO] : Autoencoder Architecture", autoencoder.summary())
-
-        return [autoencoder, encoder]
-    
     def save_reconstructed_image(self, Xtest, X_decoded):
 
         # use Matplotlib (don't ask)
@@ -1245,24 +942,7 @@ class OneClass_SVDD:
         if(OneClass_SVDD.DATASET == "mnist"):
             [cae, encoder] = self.compile_autoencoder()
             X = self.data._X_train
-        elif(OneClass_SVDD.DATASET == "cifar10"):
-            [cae, encoder] = self.compile_autoencoder_cifar()
-            X = self.data._X_train
-            self.data._X_test = self.data._X_test_beforegcn
-            print("Inside cifar10: self.data._X_test,",self.data._X_test_beforegcn.shape,np.max(self.data._X_test_beforegcn),np.min(self.data._X_test_beforegcn))
-        
-            
-        elif(OneClass_SVDD.DATASET == "gtsrb"):
-            [cae, encoder] = self.compile_autoencoder_gtsrb()
-            X = self.get_oneClass_trainData()
-            self.data._X_test = X
-            self.data._X_train = X
-            # X = np.reshape(X,(len(X),32,32,3))
-            # self.data._X_train = np.reshape(self.data._X_train,(len(self.data._X_train),32,32,3))
-            # self.data._X_test = np.reshape(self.data._X_test,(len(self.data._X_test),32,32,3))
-           
-            
-        
+
         # train_autoencoder(self)
         print("[INFO:] The shape of X used to train CAE",X.shape)
        
@@ -1454,128 +1134,32 @@ class OneClass_SVDD:
 
         scheduler = LearningRateScheduler(lr_scheduler)
 
-        if (self.lossfuncType == "SOFT_BOUND_DEEP_SVDD" or self.lossfuncType == "ONE_CLASS_DEEP_SVDD"):
-            # initialize_c_as_mean
-            n_batches = -1  # -1 refers to considering all the data in one batch
-            inputs = self.get_oneClass_trainData()
-           
-            trainX = inputs
-            print(" [INFO:]  The shape  of  trainX data ----",trainX.shape)
-            [cae, encoder] = self.pretrain_cae(solver="adam", lr=1.0, n_epochs=150)
-            # Create the SVDD network architecture and load pre-trained ae network weights
-            # Initialize center c as the mean
-            self.initialize_c_with_mean(inputs, encoder)
-            inp = encoder.input
-            out = encoder.layers[-1].output
-            from keras.models import Model
-            enoder_model_svdd = Model(inp, out)  # create a new model which doesn't have the last two layers in VGG16
-            model_ocnn_svdd = Sequential()  # new model
-
-            for layer in enoder_model_svdd.layers:
-                model_ocnn_svdd.add(layer)
-
-            model_ocnn_svdd.add(Flatten())
-            if(OneClass_SVDD.DATASET == "mnist"):
-                model_ocnn_svdd.add(Dense(self.h_size))
-                X_train_to_Adjust_R = self.data._X_train
-                trainX = X_train_to_Adjust_R
-                
-            elif(OneClass_SVDD.DATASET == "cifar10"):
-                model_ocnn_svdd.add(Dense(self.h_size))
-                X_train_to_Adjust_R = self.data._X_train
-            
-            elif(OneClass_SVDD.DATASET == "gtsrb"):
-                model_ocnn_svdd.add(Dense(self.h_size))
-                X_train_to_Adjust_R = trainX
-                
-            self.model_svdd = model_ocnn_svdd
-            
-            
-            modeltype = "OC_SVDD"
-            out_batch = Adjust_svdd_Radius(self.model_svdd, self.cvar, self.Rvar, X_train_to_Adjust_R, modeltype,self.h_size)
-            callbacks = [out_batch, scheduler]
-
-            # define SGD optimizer
-            # opt = SGD(lr=0.01, decay=0.01 / 50, momentum=0.9, nesterov=True)
-            opt = Adam(lr=1e-4)
-            
-            print("[INFO:] Hypersphere Loss function.....")
-            self.model_svdd.compile(loss=self.custom_ocnn_hypershere_loss(),
-                                    optimizer=opt)
-            y_reps = out_batch.y_reps
-            y_reps = y_reps[0:len(trainX)]
-
-            # fit the  model_svdd by defining a custom loss function
-            H = self.model_svdd.fit(trainX, y_reps, shuffle=True,
-                                    batch_size=200,
-                                    epochs=150,
-                                    validation_split=0.01,
-                                    verbose=0,
-                                    callbacks=callbacks
-                                    )
-
-            self.Rvar = out_batch.radius
-            self.cvar = out_batch.cvar
-            print("[INFO:] \n Model compiled and fit Initial Radius Value...", self.Rvar)
-            # print("[INFO:] Model compiled and fit with custom ocnn_hypershere_loss")
 
 
-        elif (self.lossfuncType == "ONE_CLASS_NEURAL_NETWORK"):
+        if (self.lossfuncType == "ONE_CLASS_NEURAL_NETWORK"):
             # Build OC-NN network
             n_batches = -1  # -1 refers to considering all the data in one batch
             inputs = self.get_oneClass_trainData()
             trainX = inputs
             [cae, encoder] = self.pretrain_cae(solver="adam", lr=1.0, n_epochs=150)
-            # Create the SVDD network architecture and load pre-trained ae network weights
+            # Create the SVDD network sarchitecture and load pre-trained ae network weights
             # Initialize center c as the mean
             self.initialize_c_with_mean(inputs, encoder)
             inp = encoder.input
             out = encoder.layers[-1].output
+            print(OneClass_SVDD.DATASET)
+            if (OneClass_SVDD.DATASET == "mnist"):
+                X_train_to_Adjust_R = trainX
             from keras.models import Model
-            enoder_model_svdd = Model(inp, out)  # create a new model which doesn't have the last two layers in VGG16
-            mode_ocnn_svdd = Sequential()  # new model
-            
-           
-            if(OneClass_SVDD.DATASET == "gtsrb"):
-                X_train_to_Adjust_R = trainX
-                # n_epochs=500 
-                
-            elif(OneClass_SVDD.DATASET == "cifar10" ):
-                X_train_to_Adjust_R = self.data._X_train
-            
-            elif( OneClass_SVDD.DATASET == "mnist"):
-                X_train_to_Adjust_R = trainX
-           
-            
-            
-            for layer in enoder_model_svdd.layers:
-                mode_ocnn_svdd.add(layer)
+            enoder_model = Model(inp, out)  # create a new model which doesn't have the last two layers in VGG16
+            oc_nn_model = self.build_ocnn_network(enoder_model)  # create a new model which doesn't have the last two layers in VGG16
 
-            mode_ocnn_svdd.add(Flatten())
-            
-            if(OneClass_SVDD.DATASET == "mnist"):
-                
-                mode_ocnn_svdd.add(Dense(32,activation='linear',use_bias=False))
 
-                # mode_ocnn_svdd.add(Dense(16,activation='sigmoid',use_bias=False))
-                
-                # mode_ocnn_svdd.add(Dense(1,activation='linear',use_bias=False))
-            
-            if(OneClass_SVDD.DATASET == "cifar10" ):
-                
-                mode_ocnn_svdd.add(Dense(32,activation='linear',use_bias=False))
 
-             
-            if(OneClass_SVDD.DATASET == "gtsrb"):
-                
-                mode_ocnn_svdd.add(Dense(32,activation='linear',use_bias=False))
-
-                mode_ocnn_svdd.add(Dense(16,activation='sigmoid',use_bias=False))
-            
 
             # print("[INFO:] Model SVDD Summary", mode_ocnn_svdd.summary())
-            self.model_svdd = mode_ocnn_svdd
-            self.reps = self.model_svdd.predict(inputs[:len(inputs), :])
+            self.oc_nn_model = oc_nn_model
+            self.reps = self.oc_nn_model.predict(inputs[:len(inputs), :])
             # consider the value all the number of batches (and thereby samples) to initialize from
             c = np.mean(self.reps, axis=0)
             
@@ -1588,22 +1172,22 @@ class OneClass_SVDD:
             self.cvar = c  # Initialize the center
 
 
-            print("[INFO:] Model SVDD Summary", self.model_svdd.summary())
+            print("[INFO:] Model OCNN Summary", self.oc_nn_model.summary())
             modeltype = "OC_NN"
-            out_batch = Adjust_svdd_Radius(self.model_svdd, self.cvar, self.Rvar, X_train_to_Adjust_R, modeltype,self.h_size)
+            out_batch = Adjust_svdd_Radius(self.oc_nn_model, self.cvar, self.Rvar, X_train_to_Adjust_R, modeltype,self.h_size)
             callbacks = [out_batch, scheduler]
 
             # define SGD optimizer
             # opt = SGD(lr=0.01, decay=0.01 / 50, momentum=0.9, nesterov=True)
             opt = Adam(lr=1e-4)
             print("[INFO:] Hyperplane Loss function.....")
-            self.model_svdd.compile(loss=self.custom_ocnn_hyperplane_loss(),
+            self.oc_nn_model.compile(loss=self.custom_ocnn_hyperplane_loss(),
                                     optimizer=opt)
             y_reps = out_batch.y_reps
             y_reps = y_reps[0:len(trainX)]
 
             # fit the  model_svdd by defining a custom loss function
-            H = self.model_svdd.fit(trainX, y_reps, shuffle=True,
+            H = self.oc_nn_model.fit(trainX, y_reps, shuffle=True,
                                     batch_size=200,
                                     epochs=100,
                                     validation_split=0.01,
@@ -1939,11 +1523,8 @@ class OneClass_SVDD:
 
         top_100_anomalies = np.asarray(top_100_anomalies)
         
-        if(OneClass_SVDD.DATASET == "cifar10"):
-            print("[INFO:] The  top_100_anomalies",top_100_anomalies.shape)
-            self.tile_raster_visualise_anamolies_detected(X_test,worst_sorted_keys,"most_normal")
-            
-        elif(OneClass_SVDD.DATASET == "mnist"):
+
+        if(OneClass_SVDD.DATASET == "mnist"):
             top_100_anomalies = np.reshape(top_100_anomalies, (-1, 28, 28))
             result = self.tile_raster_images(top_100_anomalies, [28, 28], [10, 10])
             print("[INFO:] Saving Anomalies Found at ..", self.results)
@@ -1963,11 +1544,8 @@ class OneClass_SVDD:
 
         top_100_anomalies = np.asarray(top_100_anomalies)
         
-        if(OneClass_SVDD.DATASET == "cifar10"):
-            print("[INFO:] The  top_100_anomalies",top_100_anomalies.shape)
-            self.tile_raster_visualise_anamolies_detected(X_test,worst_sorted_keys,"most_anomalous")
-            
-        elif(OneClass_SVDD.DATASET == "mnist"):
+
+        if(OneClass_SVDD.DATASET == "mnist"):
             top_100_anomalies = np.reshape(top_100_anomalies, (-1, 28, 28))
             result = self.tile_raster_images(top_100_anomalies, [28, 28], [10, 10])
             print("[INFO:] Saving Anomalies Found at ..", self.results , str(Cfg.mnist_normal) , "most_anomalous_Top100.png")
@@ -1977,59 +1555,13 @@ class OneClass_SVDD:
 
     def predict(self):
 
-        if (self.lossfuncType == "SOFT_BOUND_DEEP_SVDD"):
-            testX, testY, PosBoundary, NegBoundary,X_testForPlotting = self.get_oneClass_testData()
-            # testX = self._X_for_testingData
-            # X_testForPlotting = testX
-            center = self.cvar
-            # Compute the predicted reps
-            predicted_reps = self.model_svdd.predict(testX[:len(testX), :])
-
-            # compute the score
-            dist = np.sum(((predicted_reps - center) ** 2), axis=1)
-            scores = dist - self.Rvar
-            
-            # Sort the scores and pick the inclass anomalies
-            self.save_Most_Normal(X_testForPlotting,scores)
-            
-            self.save_Most_Anomalous(X_testForPlotting,scores)
-            
-            print("[INFO:] SOFT BOUNDARY SVDD Algorithm")
-            auc = roc_auc_score(testY, scores)
-            print("=" * 35)
-            print("[INFO:]  AUROC Oneclass SVDD (Hypersphere)....", auc)
-            print("=" * 35)
-
-        elif (self.lossfuncType == "ONE_CLASS_DEEP_SVDD"):
-
-            testX, testY, PosBoundary, NegBoundary,X_testForPlotting = self.get_oneClass_testData()
-            center = self.cvar
-            # Compute the predicted reps
-            predicted_reps = self.model_svdd.predict(testX[:len(testX), :])
-
-            # compute the score
-            dist = np.sum(((predicted_reps - center) ** 2), axis=1)
-            # scores = dist - self.Rvar SOft Bound Deep SVDD
-            scores = dist  # One class Deep SVDD
-            
-            # Sort the scores and pick the inclass anomalies
-            self.save_Most_Normal(X_testForPlotting,scores)
-            
-            self.save_Most_Anomalous(X_testForPlotting,scores)
-            
-            
-            print("[INFO:] One Class Deep SVDD Algorithm")
-            auc = roc_auc_score(testY, scores)
-            print("=" * 35)
-            print("[INFO:]  AUROC Oneclass SVDD (Hypersphere)....", auc)
-            print("=" * 35)
 
 
-        elif (self.lossfuncType == "ONE_CLASS_NEURAL_NETWORK"):
+        if (self.lossfuncType == "ONE_CLASS_NEURAL_NETWORK"):
 
             testX, testY, PosBoundary, NegBoundary,X_testForPlotting = self.get_oneClass_testData()
             # Compute the predicted reps
-            scores = self.model_svdd.predict(testX[:len(testX), :])
+            scores = self.oc_nn_model.predict(testX[:len(testX), :])
             center = self.cvar
             # compute the score
             dist = np.sum(((scores - center) ** 2), axis=1)

@@ -81,8 +81,8 @@ class MNIST_DataLoader(DataLoader):
         self.on_memory = True
         Cfg.store_on_gpu = True
         # print("Inside the MNIST_DataLoader RCAE.RESULT_PATH:", RCAE_AD.RESULT_PATH)
-        self.rcae_results = "/content/drive/My Drive/2018/Colab_Deep_Learning/one_class_neural_networks//reports/figures/MNIST/RCAE/"
-        self.modelsave_path = "/content/drive/My Drive/2018/Colab_Deep_Learning/one_class_neural_networks/models/MNIST/RCAE/"
+        self.rcae_results = "/tf/reports/figures/MNIST/RCAE/"
+        self.modelsave_path = "/tf/models/MNIST/RCAE/"
 
         print("Inside the MNIST_DataLoader RCAE.RESULT_PATH:", self.rcae_results)
 
