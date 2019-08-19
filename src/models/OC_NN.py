@@ -135,7 +135,7 @@ class OC_NN:
         model.add(Activation(custom_activation))
 
         ## Define Dense layer from hidden  to output
-        hidden_ouput = Dense(classes, name="hidden_output")
+        hidden_ouput = Dense(1, name="hidden_output")
         model.add(hidden_ouput)
         model.add(Activation("linear"))
 
@@ -458,13 +458,17 @@ class OC_NN:
         ## Initialize the network with pretrained weights
 
         ## y_true
-        y_true_pos = np.ones(testPosX.shape[0])
-        y_true_neg = np.zeros(testNegX.shape[0])
-        y_true_pos = to_categorical(y_true_pos, num_classes=2)
-        y_true_neg = to_categorical(y_true_neg, num_classes=2)
-        y_true = np.concatenate((y_true_pos, y_true_neg))
+        trainXPos = X_train[np.where(y_train == 1)]
+        trainYPos = np.ones(len(trainXPos))
+        trainXNeg = X_train[np.where(y_train == -1)]
 
-        x_test = np.concatenate((testPosX, testNegX), axis=0)
+        trainYNeg = -1 * np.ones(len(trainXNeg))
+
+        PosBoundary = len(trainXPos)
+        NegBoundary = len(trainXNeg)
+
+        x_test = np.concatenate((trainXPos, trainXNeg))
+        y_true = np.concatenate((trainYPos, trainYNeg))
 
         IMG_HGT = self.IMG_HGT
         IMG_WDT = self.IMG_WDT
