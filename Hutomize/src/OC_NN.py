@@ -8,7 +8,7 @@ from keras.layers import GaussianNoise, Input, Conv2D, UpSampling2D, BatchNormal
 from keras.models import Model
 from keras.utils import plot_model
 from keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau, TensorBoard
-from custom_layers.unpooling_layer import Unpooling
+# from custom_layers.unpooling_layer import Unpooling
 from utils import custom_loss
 from keras.optimizers import SGD
 from keras.utils.training_utils import multi_gpu_model
@@ -19,13 +19,21 @@ class OCNN(object):
     channels = 3
     image_height = 228
     image_width = 228
-
-    def __init__(self):
-        self.data = SurgicalDataset('data')
-        self.generator = self.data.getIterator()
-        self.ae = self.create_autoencoder()
-        self.ae = multi_gpu_model(self.ae, gpus=2)
     
+    def __init__(self):
+        # self.data = SurgicalDataset('data')
+        # self.generator = self.data.getIterator()
+        self.ae = self.create_autoencoder()
+       # self.ae = multi_gpu_model(self.ae, gpus=2)
+        self.remove_decoder_layers()
+    def remove_decoder_layers(self):
+        model = self.ae
+        for count in range(0, 10):
+            print("HERE????")
+            model.layers.pop()
+        print (model.summary())
+
+        return model
     def fitAE(self):
         model = self.ae
         sgd = SGD(lr=1e-3, decay=1e-6, momentum=0.9, nesterov=True)
